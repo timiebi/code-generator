@@ -1,25 +1,28 @@
-import React from "react";
-import logo from "./logo.svg";
+import React, { useState } from "react";
 import "./App.css";
+import { ThemeProvider } from "styled-components";
+import { lightTheme, darktheme } from "./globalStyles/themes";
+import { RouterProvider } from "react-router-dom";
+import { router } from "./route/main";
+import { GlobalStyle } from "./globalStyles";
+import MobileWarning from "./route/desktopWarning";
+import useDeviceDimensions from "./hooks/useWindowDimension";
 
 function App() {
+  const [theme,
+    //  setTheme
+    ] = useState<string>("light");
+  const { largerThanTablets } = useDeviceDimensions();
+
+  if (largerThanTablets) {
+     <MobileWarning />;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme === "light" ? lightTheme : darktheme}>
+      <MobileWarning />
+      <GlobalStyle />
+      <RouterProvider router={router} />
+    </ThemeProvider>
   );
 }
 
