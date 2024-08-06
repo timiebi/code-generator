@@ -2,7 +2,7 @@ import { CREATE_IMAGE } from "../../assets/images";
 import { useGetCreateUser } from "../../hooks/useCreateUser";
 import { paths } from "../../route/frontend";
 import { AuthButton } from "../../utils/authButton";
-import { PasswordField } from "../../utils/passwordInput";
+// import { PasswordField } from "../../utils/passwordInput";
 import { TextField } from "../../utils/textField";
 import {
   AuthMain,
@@ -16,14 +16,14 @@ import {
 
 export const ForgotPassword = () => {
   const {
-    surename,
-    setSurename,
-    othernames,
-    setOthernames,
+    // surename,
+    // setSurename,
+    // othernames,
+    // setOthernames,
     email,
     setEmail,
-    phone,
-    setPhone,
+    // phone,
+    // setPhone,
   } = useGetCreateUser();
 
   return (

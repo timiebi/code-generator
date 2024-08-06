@@ -1,5 +1,6 @@
 export const paths ={
-    home: '/',
+    main: '/',
+    home: "/home",
     about: '/about',
     contact: '/contact',
     dashboard: '/dashboard',
@@ -8,4 +9,7 @@ export const paths ={
     create_account: '/create-account',
     forgot_password: '/forgot-password',
     set_password: '/set-password',
+    profile: 'profile',
+    userProfile:"/your-profile",
+    profileSettings: "/profile-settings",
 }

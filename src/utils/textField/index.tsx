@@ -7,16 +7,20 @@ type Props = {
   value: string;
   onChange: (event: any) => void;
   type: string;
+  // border?: boolean;
+  id?: string
 };
 export const TextField: FC<Props> = (props) => {
   return (
     <TextFieldStyle>
       <Label>{props.label}</Label>
       <InputField
+      // style={{border: props.border?"": "none"}}
         name={props.name}
         onChange={props.onChange}
         value={props.value}
         type={props.type}
+        id={props.id}
       />
     </TextFieldStyle>
   );
